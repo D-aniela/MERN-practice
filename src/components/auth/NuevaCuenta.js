@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const NuevaCuenta = () => {
-  return <h1>Desde NuevaCuenta</h1>;
-};
+  return <h1>Desde NuevaCuenta</h1>
+}
 
-export default NuevaCuenta;
+export default NuevaCuenta
