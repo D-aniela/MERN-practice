@@ -18,6 +18,25 @@ const Login = () => {
               onChange={onChange}
             />
           </div>
+
+          <div className="campo-form">
+            <label htmlFor="email">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              onChange={onChange}
+            />
+          </div>
+
+          <div className="campo-form">
+            <input
+              type="submit"
+              className="btn btn-primario btn-block"
+              value="Iniciar Sesión"
+            />
+          </div>
         </form>
       </div>
     </div>
