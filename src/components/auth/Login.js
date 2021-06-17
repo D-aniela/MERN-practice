@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
-  const onChange = () => {}
+  // Definir state para iniciar sesion
+  const [usuario, guardarUsuario] = useState({
+    email: '',
+    password: ''
+  })
+
+  //Extraer usuario
+  const { email, password } = usuario
+
+  const onChange = e => {
+    guardarUsuario({
+      ...usuario,
+      [e.target.name]: e.target.value
+    })
+  }
 
   return (
     <div className="form-usuuario">
@@ -15,6 +29,7 @@ const Login = () => {
               id="email"
               name="email"
               placeholder="Correo electrónico"
+              value={email}
               onChange={onChange}
             />
           </div>
@@ -26,6 +41,7 @@ const Login = () => {
               id="password"
               name="password"
               placeholder="Password"
+              value={password}
               onChange={onChange}
             />
           </div>
