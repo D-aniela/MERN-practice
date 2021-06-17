@@ -17,11 +17,16 @@ const Login = () => {
     })
   }
 
+  // Cuando el usuario quiere iniciar sesion
+  const onSubmit = e => {
+    e.preventDefault()
+  }
+
   return (
     <div className="form-usuuario">
       <div className="contenedor-form sombra-dark">
         <h1>Iniciar sesión</h1>
-        <form>
+        <form onSubmit={onSubmit}>
           <div className="campo-form">
             <label htmlFor="email">Email</label>
             <input
