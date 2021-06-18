@@ -1,6 +1,21 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 
 const NuevoProyecto = () => {
+  //state para proyecto
+  const [proyecto, guardarProyecto] = useState({
+    nombre: ''
+  })
+
+  //extraer nombre de proyecto
+  const { nombre } = proyecto
+
+  const onChangeProyecto = e => {
+    guardarProyecto({
+      ...proyecto,
+      [e.target.name]: e.target.value
+    })
+  }
+
   return (
     <Fragment>
       <button type="button" className="btn btn-block btn-primario">
@@ -12,6 +27,8 @@ const NuevoProyecto = () => {
           className="input-text"
           placeholder="Nombre proyecto"
           name="nombre"
+          value={proyecto}
+          onChange={onChangeProyecto}
         />
 
         <input
