@@ -87,8 +87,8 @@ const NuevaCuenta = () => {
             />
           </div>
         </form>
-        <Link to={'/nueva-cuenta'} className="enlace-cuenta">
-          Obtener Cuenta
+        <Link to={'/'} className="enlace-cuenta">
+          Volver a iniciar sesión
         </Link>
       </div>
     </div>
