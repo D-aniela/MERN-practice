@@ -4,7 +4,7 @@ import proyectoContext from '../../context/proyectos/proyectoContext'
 const NuevoProyecto = () => {
   // obtener state del formulario
   const proyectosContext = useContext(proyectoContext)
-  const { formulario, mostrarFormulario } = proyectosContext
+  const { formulario, mostrarFormulario, agregarProyecto } = proyectosContext
 
   //state para proyecto
   const [proyecto, guardarProyecto] = useState({
@@ -25,6 +25,19 @@ const NuevoProyecto = () => {
   //cuando el usuario envia un proyecto
   const onSubmitProyecto = e => {
     e.preventDefault()
+
+    //Validar proyecto
+    if (nombre == '') {
+      return
+    }
+
+    // Agregar al state
+    agregarProyecto(proyecto)
+
+    // reiniciar form
+    guardarProyecto({
+      nombre: ''
+    })
   }
 
   // Mostrar el formulario
@@ -50,7 +63,7 @@ const NuevoProyecto = () => {
             className="input-text"
             placeholder="Nombre proyecto"
             name="nombre"
-            value={proyecto}
+            value={nombre}
             onChange={onChangeProyecto}
           />
 
