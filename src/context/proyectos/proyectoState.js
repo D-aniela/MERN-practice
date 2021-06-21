@@ -5,6 +5,7 @@ import proyectoContext from './proyectoContext'
 import proyectoReducer from './proyectoReducer'
 import {
   AGREGAR_PROYECTO,
+  ELIMINAR_PROYECTO,
   FORMULARIO_PROYECTO,
   OBTENER_PROYECTOS,
   PROYECTO_ACTUAL,
@@ -70,6 +71,14 @@ const ProyectoState = props => {
     })
   }
 
+  // Elimina un proyecto
+  const eliminarProyecto = proyectoId => {
+    dispatch({
+      type: ELIMINAR_PROYECTO,
+      payload: proyectoId
+    })
+  }
+
   return (
     // desde aqui nacen los datos
     <proyectoContext.Provider
@@ -82,7 +91,8 @@ const ProyectoState = props => {
         obtenerProyectos,
         agregarProyecto,
         mostrarError,
-        proyectoActual
+        proyectoActual,
+        eliminarProyecto
       }}
     >
       {props.children}
