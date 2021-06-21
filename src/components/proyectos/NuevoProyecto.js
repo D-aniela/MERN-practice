@@ -36,7 +36,7 @@ const NuevoProyecto = () => {
     e.preventDefault()
 
     //Validar proyecto
-    if (nombre == '') {
+    if (nombre === '') {
       mostrarError()
       return
     }
