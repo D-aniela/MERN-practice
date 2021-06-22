@@ -12,7 +12,7 @@ export default (state, action) => {
     case AGREGAR_TAREA:
       return {
         ...state,
-        tareas: [...sate.tareas, action.payload]
+        tareas: [...state.tareas, action.payload]
       }
     default:
       return state
