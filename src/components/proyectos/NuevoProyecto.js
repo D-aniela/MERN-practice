@@ -69,6 +69,7 @@ const NuevoProyecto = () => {
       {formulario ? (
         <form className="formulario-nuevo-proyecto" onSubmit={onSubmitProyecto}>
           <input
+          
             type="text"
             className="input-text"
             placeholder="Nombre proyecto"
