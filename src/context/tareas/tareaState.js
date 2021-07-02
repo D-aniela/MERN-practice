@@ -6,10 +6,12 @@ import {
   VALIDAR_TAREA,
   ESTADO_TAREA,
   TAREA_ACTUAL,
-  ACTUALIZAR_TAREA
+  ACTUALIZAR_TAREA,
+  LIMPIAR_TAREA
 } from '../../types'
 import tareaReducer from './tareaReducer'
 import TareaContext from './tareaContext'
+import { v4 as uuidv4 } from 'uuid'
 
 const TareaState = props => {
   const initialState = {
@@ -106,9 +108,17 @@ const TareaState = props => {
 
   // Edita o modifica una tarea
   const actualizarTarea = tarea => {
+    tarea.id = uuidv4()
     dispatch({
       type: ACTUALIZAR_TAREA,
       payload: tarea
+    })
+  }
+
+  // elimina la tarea seleccionada
+  const limpiarTarea = () => {
+    dispatch({
+      type: LIMPIAR_TAREA
     })
   }
 
@@ -125,7 +135,8 @@ const TareaState = props => {
         eliminarTarea,
         cambiarEstadoTarea,
         guardarTareaActual,
-        actualizarTarea
+        actualizarTarea,
+        limpiarTarea
       }}
     >
       {props.children}
